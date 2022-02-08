@@ -20,7 +20,7 @@ function Header(props) {
 								<a href="/" className="block lg:mr-4 flex-shrink-0">
 									<img src={logo} className="w-10" alt='logo'/>
 								</a>
-								<h2 className="ml-3 text-xl">Longboard</h2>
+								<h2 className="ml-3 text-xl">Long board</h2>
 							</div>
 						</div>
 
