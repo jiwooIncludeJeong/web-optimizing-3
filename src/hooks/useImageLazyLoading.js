@@ -10,8 +10,12 @@ const useImageLazyLoading = (imgRef) => {
         };
         const callback = (entries, observer) => {
             entries.forEach(entry => {
+                console.log(entry.isIntersecting)
                 if(entry.isIntersecting){
-                    entry.target.src = entry.target.dataset.src;
+                    const {target} = entry;
+                    const {previousSibling} = target;
+                    target.src = target.dataset.src;
+                    previousSibling.srcset = previousSibling.dataset.srcset;
                     observer.unobserve(entry.target);
                 }
             })
