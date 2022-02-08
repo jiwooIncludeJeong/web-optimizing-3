@@ -42,7 +42,7 @@ function MainPage(props) {
 					bgColor={'#f4f4f4'}
 					columns={[
 						<picture>
-							<source data-srcSet={main_items_wepb} type={'image/webp'}/>
+							<source data-srcset={main_items_wepb} type={'image/webp'}/>
 							<img ref={firstImgRef} data-src={main_items} />
 						</picture>,
 						<Meta
@@ -61,7 +61,7 @@ function MainPage(props) {
 							btnLink={'/part'}
 						/>,
 						<picture>
-							<source data-srcSet={main_parts_wepb} type={'image/webp'}/>
+							<source data-srcset={main_parts_wepb} type={'image/webp'}/>
 							<img ref={secondImgRef} data-src={main_parts} />
 						</picture>
 					]}
