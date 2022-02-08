@@ -10,34 +10,16 @@ import main3 from '../assets/main3.jpg'
 import main_items from '../assets/main-items.jpg'
 import main_parts from '../assets/main-parts.jpg'
 import main_styles from '../assets/main-styles.jpg'
+import useImageLazyLoading from "../hooks/useImageLazyLoading";
 
 function MainPage(props) {
-
 	const firstImgRef = useRef(null);
 	const secondImgRef = useRef(null);
 	const thirdImgRef = useRef(null);
 
-	useEffect(()=>{
-		const callback = (entries, observer) => {
-			entries.forEach(entry => {
-				if(entry.isIntersecting){
-					entry.target.src = entry.target.dataset.src;
-					observer.unobserve(entry.target)
-				}
-			})
-		}
-
-		const firstObserver = new IntersectionObserver(callback);
-		const secondObserver = new IntersectionObserver(callback);
-		const thirdObserver = new IntersectionObserver(callback);
-
-		firstObserver.observe(firstImgRef.current);
-		secondObserver.observe(secondImgRef.current);
-		thirdObserver.observe(thirdImgRef.current);
-
-	},[])
-
-
+	useImageLazyLoading(firstImgRef);
+	useImageLazyLoading(secondImgRef);
+	useImageLazyLoading(thirdImgRef);
 
 	return (
 		<div className="MainPage -mt-16">
